@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for (let i = 0; i < numPhotos; i++) {
         const img = document.createElement('img');
-        img.src = `gallery/img${i}.jpeg`;
+        img.src = `img${i}.jpeg`;
         img.alt = `Photo ${i + 1}`;
         img.className = 'photo';
         img.style.animationDelay = `${i * 0.1}s`;
@@ -62,3 +62,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
