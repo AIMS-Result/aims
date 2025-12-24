@@ -1,83 +1,64 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
+document.addEventListener('DOMContentLoaded', function() {
+    const gallery = document.getElementById('gallery');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeBtn = document.getElementsByClassName('close')[0];
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const numPhotos = 30;
+    let currentIndex = 0;
+    const images = [];
 
-// Mobile navigation toggle
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-
-// Form submission handling
-const admissionForm = document.getElementById('admission-form');
-
-admissionForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    // Get form data
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData);
-
-    // Simple validation
-    if (!data.name || !data.email || !data.program) {
-        alert('Please fill in all required fields.');
-        return;
+    for (let i = 0; i < numPhotos; i++) {
+        const img = document.createElement('img');
+        img.src = `gallery/img${i}.jpeg`;
+        img.alt = `Photo ${i + 1}`;
+        img.className = 'photo';
+        img.style.animationDelay = `${i * 0.1}s`;
+        img.addEventListener('click', function() {
+            currentIndex = i;
+            showModal();
+        });
+        gallery.appendChild(img);
+        images.push(img);
     }
 
-    // Simulate form submission (in a real application, this would send data to a server)
-    alert(`Thank you for your application, ${data.name}! We will contact you at ${data.email} regarding the ${data.program} program.`);
+    function showModal() {
+        modal.style.display = 'block';
+        modalImg.src = images[currentIndex].src;
+        updateButtons();
+    }
 
-    // Reset form
-    this.reset();
-});
+    function updateButtons() {
+        prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
+        nextBtn.style.display = currentIndex === numPhotos - 1 ? 'none' : 'block';
+    }
 
-// Add scroll effect to header
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (window.scrollY > 100) {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-    } else {
-        header.style.backgroundColor = '#fff';
+    // Close modal when clicking on close button
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    // Close modal when clicking outside the image
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    // Previous button
+    prevBtn.onclick = function() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            showModal();
+        }
+    }
+
+    // Next button
+    nextBtn.onclick = function() {
+        if (currentIndex < numPhotos - 1) {
+            currentIndex++;
+            showModal();
+        }
     }
 });
-
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Apply fade-in animation to sections
-document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(section);
-});
-
-
-
-
-
-
