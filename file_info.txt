@@ -1,0 +1,8 @@
+1. home.html- main page
+2. try1.php- add frontend 
+3. try2.php- add backend
+4. try3.php- view
+5. try4.php- delete backend
+6. try5.html- delete frontend
+7. try6.php- update backend
+8. update.html- update frontend

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="css/style.css">
+<body>
+
+<!panel>
+<!-- <button class="w3-button w3-red" onclick="document.getElementById('id01').style.display='block'">Show Panel</button> 
+-->
+
+
+<div id="id01" class="w3-panel w3-green w3-display-container" style="display:none">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-red w3-display-topright">x</span>
+  <p>Click on the X to close this panel.</p>
+  <p>Click on the X to close this panel.</p>
+</div>
+
+<!--<header>
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <h1>AIMS</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <!--<li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#admissions">Admissions</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                   --> 
+		   <li><a href="home.html">Student</a></li>
+		</ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+-->
+
+
+<!menu / sidebar>
+<div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large"
+  onclick="w3_close()">Close &times;</button>
+  <a href="home.html" class="w3-bar-item w3-button">HOME</a>
+  <a href="try1.php" class="w3-bar-item w3-button">ADD</a>
+  <a href="try3.php" class="w3-bar-item w3-button">VIEW</a>
+  <a href="try5.html" class="w3-bar-item w3-button">DELETE</a>
+  <a href="update.html" class="w3-bar-item w3-button">Update</a>
+</div>
+
+<div>
+  <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1><center>AIMS DHAMNOD</center></h1>
+    <!--<p>Click on the "hamburger menu" to slide in the side navigation.</p>
+    <p>W3.CSS provide the following animation classes if you want to experiment for yourself:</p>
+    <p>w3-animate-left, w3-animate-top, w3-animate-bottom, w3-animate-right, w3-animate-opacity, w3-animate-zoom</p>
+  --></div>
+</div>
+
+<script>
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+     
+
+<! image>
+
+<div class="w3-container">
+  <h1>The <strong>w3-display-container</strong> Class</h1>
+  <p>Position of text inside an image</p>
+  
+  <div class="w3-display-container w3-text-white"><center>
+
+<img src="photo/ganesha.png" alt="Lights" style="width: 1200px; height: 600px;"><br>
+<img src="photo/mahakal.png" alt="Lights" style="width: 1200px; height: 600px;"><br>
+</center>
+
+<!--<marquee scrollamount="30" behavior="alternate">
+	<img src="photo/ep.png" alt="Lights" style="width: 1300px; height: 400px;">
+</marquee>
+<marquee direction="right" scrollamount="30" behavior="slide">
+	<img src="photo/dir.png" alt="Lights" style="width: 1000px; height: 700px;">
+</marquee>
+<marquee direction="left" scrollamount="30" behavior="slide">
+	<img src="photo/prin.png" alt="Lights" style="width: 1000px; height: 600px;">
+</marquee>
+<marquee direction="right" scrollamount="30" behavior="alternate">
+	<img src="ep4.png" alt="Lights" style="width: 1000px; height: 600px;">
+</marquee>
+<img src="photo/img1.png" alt="Lights" style="width: 1200px; height: 600px;"><br>
+-->s
+
+<!--    <div class="w3-padding w3-display-topleft">Top Left</div>
+    <div class="w3-padding w3-display-topright">Top Right</div>
+    <div class="w3-padding w3-display-bottomleft">Bottom Left</div>
+    <div class="w3-padding w3-display-bottomright">Bottom Right</div>
+    <div class="w3-padding w3-display-topmiddle">Top Mid</div>
+    <div class="w3-padding w3-display-left">Left</div>
+    <div class="w3-padding w3-display-right">Right</div>
+    <div class="w3-padding w3-display-middle w3-xxlarge">Middle</div>
+    <div class="w3-padding w3-display-bottommiddle">Bottom Mid</div>
+  </div>
+-->
+</div>
+<script src="js/script.js"></script>
+</body>
+</html> 

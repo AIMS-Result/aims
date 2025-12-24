@@ -1,0 +1,87 @@
+<html><head>
+<link href="SVStyle/Style.css" rel="stylesheet" type="text/css">
+<style>
+a{
+font-size:12px;
+letter-spacing:2px;
+}
+</style>
+<title>News</title></head>
+<body marginwidth="0" marginheight="0">
+
+<div id="datacontainer" style="position: absolute; left: 1px; top: -138px; width: 500px; color: rgb(51, 51, 51);" onmouseover="scrollspeed=0" onmouseout="scrollspeed=cache">
+
+<!-- ADD YOUR SCROLLER CONTENT INSIDE HERE -->
+<p align="left"><small><strong>
+
+<font face="arial"><a href="#" target="_top"> "Notice for ALL VI th sem students " <br>
+</a></font></strong>
+
+<font size="2" face="arial">Exam application form submission last date is 31 March,2017. </font></small></p>
+<p align="left"><small><strong>
+	<font face="arial"><a href="#" target="_top">"NSS (National Social Service)registration will be start from July 22,interested student should meet at NSS department " <br>
+</a></font>
+	</strong>
+
+	<font size="2" face="arial">Contact Mr.NITIN SONI </font></small></p>
+
+<p align="left"><small><strong>
+	<font face="arial"><a href="http://results.dauniv.ac.in/" target="_top">'Pooja Tanwar student of Bsc(C) VI SEMhas got highest percentage " <br>
+</a></font>
+	</strong>
+	<font size="2" face="arial">Bsc V nd sem result has been declared visit at www.davv.ac.in/result. </font>
+	</small></p>
+
+<p align="left"><small><strong>
+	<font face="arial"><a href="http://mphighereducation.nic.in/" target="_top">For online Admission details please check on this link::: <br>
+</a></font></strong><font size="2" face="arial">Or Contact on College Campus. </font></small></p>
+<p align="left"><small><strong><font face="arial"><a href="#" target="_top">08 students selected for University level NSS CAMP.</a></font></strong></small></p>
+<p align="left"><small><strong><font face="arial"><a href="#" target="_top">13 students selected for NSS C certificate viva and project .<br>
+</a></font></strong></small></p>
+<p align="left">&nbsp;</p>
+</div>
+
+<script type="text/javascript">
+
+/***********************************************
+* IFRAME Scroller script- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+//Specify speed of scroll. Larger=faster (ie: 5)
+var scrollspeed=cache=1
+
+//Specify intial delay before scroller starts scrolling (in miliseconds):
+var initialdelay=100
+
+function initializeScroller(){
+dataobj=document.all? document.all.datacontainer : document.getElementById("datacontainer")
+dataobj.style.top="5px"
+setTimeout("getdataheight()", initialdelay)
+}
+
+function getdataheight(){
+thelength=dataobj.offsetHeight
+if (thelength==0)
+setTimeout("getdataheight()",10)
+else
+scrollDiv()
+}
+
+function scrollDiv(){
+dataobj.style.top=parseInt(dataobj.style.top)-scrollspeed+"px"
+if (parseInt(dataobj.style.top)<thelength*(-1))
+dataobj.style.top="5px"
+setTimeout("scrollDiv()",40)
+}
+
+if (window.addEventListener)
+window.addEventListener("load", initializeScroller, false)
+else if (window.attachEvent)
+window.attachEvent("onload", initializeScroller)
+else
+window.onload=initializeScroller
+
+</script>
+</body></html>

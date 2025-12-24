@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scroll Animation</title>
+<link rel="stylesheet">
+<style>
+
+
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+}
+.content {
+padding: 20px;
+}
+.animated-image {
+width: 300px; /* Adjust size as needed */
+height: auto;
+opacity: 0; /* Start invisible */
+transform: translateX(100px); /* Start slightly below */
+transition: opacity 3s ease, transform 3s ease; /* Smooth animation */
+margin: 20px auto;
+display: block;
+}
+
+.animated-image.visible {
+opacity: 1; /* Fade in */
+transform: translateY(100px); /* Slide up */
+}
+</style>
+</head>
+
+<body>
+
+<div class="content">
+<p>Scroll down to see the images appear with animation.</p>
+<!-- Add more content here to make the page scrollable -->
+<div style="height: 0vh;"></div> <!-- Spacer for scrolling -->
+</div>
+<div><img class="animated-image" src="photo/img2.jpg" alt="Animated Image 1">
+<img class="animated-image" src="photo/img4.jpg" alt="Animated Image 2">
+</div><div style="height: 10vh;"></div> <!-- Spacer between images -->
+<img class="animated-image" src="photo/img4.jpg" alt="Animated Image 2">
+<div style="height: 10vh;"></div> <!-- Another spacer -->
+<img class="animated-image" src="photo/logo2.jpg" alt="Animated Image 3">
+
+
+<script >
+document.addEventListener('DOMContentLoaded', function() {
+const images = document.querySelectorAll('.animated-image');
+// Create an Intersection Observer
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+// Add the 'visible' class when the image is in view
+entry.target.classList.add('visible');
+// Optionally, stop observing after animation to improve performance
+observer.unobserve(entry.target);
+}
+});
+}, {
+threshold: 0.1 // Trigger when 10% of the image is visible
+});
+// Observe each image
+images.forEach(image => {
+observer.observe(image);
+});
+
+
+
+});
+
+</script>
+</body>
+</html>
+
+
+
+
+
+

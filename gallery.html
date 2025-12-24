@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="gallery/gallerystyle.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/home.css">
+
+
+<script>
+		function w3_open() {
+ 	   	document.getElementById("mySidebar").style.display = "block";
+		}
+		function w3_close() {
+    		document.getElementById("mySidebar").style.display = "none";
+		}
+	</script>
+
+</head>
+<body>
+
+<nav>
+            <div style="text-align:center; font-size:30px; background:linear-gradient(135deg, #667eea 		0%, #764ba2 100%)" ,class="container">
+	<div class="logo"> <br>
+                    <h1>ADARSH INSTITUTE OF MANAGEMENT &amp; SCIENCE </h1>
+	</div><br>
+	</div>
+
+
+<!--CONTAIN OF SLIDER-->
+	<div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display: none;" id="mySidebar">
+  	<button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close ×</button>
+ 
+	<a href="index.html" class="w3-bar-item w3-button">HOME</a>
+		<div class="w3-dropdown-hover">
+    		<button class="w3-button">ABOUT</button>
+    		<div class="w3-dropdown-content w3-bar-block w3-card-4">
+		<a href="director.html" class="w3-bar-item w3-button">DIRECTOR</a>
+		<a href="principal.html" class="w3-bar-item w3-button">PRINCIPAL</a>
+ 		</div>
+  		</div>
+	<a href="my_faculty.html" class="w3-bar-item w3-button">FACULTY</a>
+	<a href="https://www.highereducation.mp.gov.in/?page=JUL9t1LHqftaDqryEIQFtg%3D%3D" class="w3-bar-item w3-button">NEP </a>
+	<a href="https://www.dauniv.ac.in/" class="w3-bar-item w3-button">DAVV</a>
+	<a href="#" class="w3-bar-item w3-button">EVENTS</a>
+	<a href="#" class="w3-bar-item w3-button">ALUMINI</a>
+	<a href="gallery.html" class="w3-bar-item w3-button">GALLERY</a>
+  	<a href="#" class="w3-bar-item w3-button">RESULTS</a>
+	</div>
+
+
+
+<!--NAVIGATION BAR-->	
+	<div style="margin-top: -20px;
+     font-size: 25px;
+    background-color: lightgray;
+    font-family: monospace;
+    height: 45px;" ,class="container">
+		<ul class="nav-links">
+		<button class="w3-button w3-white w3-large" onclick="w3_open					()">☰</button>
+                    	<li><a href="index.html">Home</a></li>
+                    	<li><a href="index.html#courses">Courses</a></li>
+                    	<li><a href="index.html#admissions">Admissions</a></li>
+        	 	<li><a href="https://www.dauniv.ac.in/">DAVV</a></li> 
+		<li><a href="gallery.html">GALLERY</a></li>
+		<li><a href="index.html#contact">Contact</a></li>
+	  	<li><a href="my_faculty.html">Faculty</a></li>
+	                  <li><a href="#">आदर्श न्यूज़</a></li>
+		</ul>
+	</div>
+</nav>
+
+    <h1>Photo Gallery</h1>
+    <div id="gallery"></div>
+
+    <!-- Modal for full view -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <button class="nav-btn prev-btn" id="prev-btn">&#10094;</button>
+        <img class="modal-content" id="modal-img">
+        <button class="nav-btn next-btn" id="next-btn">&#10095;</button>
+    </div>
+
+    <script src="gallery/script.js"></script>
+</body>
+</html>
